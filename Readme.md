@@ -1,9 +1,18 @@
+![Screenshot](https://raw.github.com/plasm/the-wall/master/logotipo.png)
+
 The Wall - A Javascript plugin for Mootools
-=========================================
+===========================================
 
 The Wall is a plugin for Mootools javascript framework designed to create walls of infinite dimensions. Its flexibility allows different applications, from infinite wall mode to Coda slider mode. The Wall creates compatible interfaces with the newer browsers and iPhone and iPad mobile devices.
 
-![Screenshot](https://raw.github.com/plasm/the-wall/master/logotipo.png)
+Urls The Wall
+=============
+The trailer: [Trailer](http://www.vimeo.com/plasm/the-wall "The Wall trailer")
+
+Project site: [wall.plasm.it](http://wall.plasm.it "The Wall")
+
+My portfolio: [www.plasm.it](http://www.plasm.it "Plasm")
+
 
 How to use
 ----------
