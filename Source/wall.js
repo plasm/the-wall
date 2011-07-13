@@ -10,7 +10,7 @@ authors:
 requires:
 - core/1.3: '*'
 
-provides: [MooStarRating]
+provides:
 
 ...
 */
