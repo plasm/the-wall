@@ -1,0 +1,19 @@
+/* Viewport */
+#viewport{
+    width:600px;
+    height:600px;
+    position:relative;
+    overflow:hidden;
+    margin:40px auto;
+    background:#212121;
+}
+/* Wall */
+#wall{
+    z-index:1;
+}
+    /* Tile Wall create */
+    #wall .tile{
+        color:#FFFFFF;
+        text-align:center;
+        line-height:120px;
+    }
