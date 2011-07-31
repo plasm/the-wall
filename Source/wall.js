@@ -48,6 +48,7 @@ provides:
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  * Log:
+ * 1.1 - Inserito onResize Windows
  * 1.0 - Inizio implementazione release stabile
  */
  
@@ -130,7 +131,8 @@ var Wall = new Class({
                 }.bind( this )
             });
             // Inizializza Resize Windows
-            // window.addEvent('resize', function(){ this.initialize() }.bind( this ));
+            window.addEvent('resize', function(){ this.options.callOnUpdate(this.updateWall()); }.bind( this ));
+
             // Inizializza Class
             this.init = true;
         }else{
