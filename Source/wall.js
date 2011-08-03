@@ -11,7 +11,7 @@ requires:
 - core/1.3: '*'
 
 provides:
-
+- The Wall
 ...
 */
 
