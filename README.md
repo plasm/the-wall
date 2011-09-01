@@ -31,10 +31,10 @@ Snippet code Javascript:
                     "rangey":[-100,100],
                     callOnUpdate: function(items){
                         items.each(function(e, i){
-                            <!-- This is example code -->
+                            // This is example code
                             var a = new Element("img[src=/your/folder/images/"+counter+".jpg]");
                                 a.inject(e.node).fade("hide").fade("in");
-                            counterFluid++;
+                            counter++;
                             // Reset counter
                             if( counter > maxLength ) counter = 1;
                         })
