@@ -480,7 +480,7 @@ var Wall = new Class({
     preloadContent: function(){
         // Array Nodes
         var newItems = [];
-        $each(this.coordinates, function(e){
+        Object.each(this.coordinates, function(e){
             if (this.grid[e.c] === undefined) this.grid[e.c] = {};
                 var item = this.appendTile(e.c, e.r);
                     newItems.push(item);
