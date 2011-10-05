@@ -86,7 +86,8 @@ var Wall = new Class({
         showDuration     : 3000,              // Durata visualizzazione Slideshow
         preload          : false,             // Precarica contenuto
         callOnUpdate     : Function,          // Azione on drag/complete
-        callOnChange     : Function           // Azione scatenata quando viene impostato id elemento attivo
+        callOnChange     : Function,          // Azione scatenata quando viene impostato id elemento attivo
+        detectMobile     : true               // Detect mobile device
     },
 
     initialize : function(id, options) {
@@ -266,7 +267,7 @@ var Wall = new Class({
         if( this.options.slideshow == true ) this.initSlideshow();
        
         // Inizializza Device Mobile
-        if( this.detectMobile() ) this.initMobile();
+        if( this.options.detectMobile && this.detectMobile() ) this.initMobile();
 
         //
         return this;
