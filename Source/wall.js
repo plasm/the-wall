@@ -463,7 +463,7 @@ var Wall = new Class({
                 "class": "tile",
                 "col": i,
                 "row": j,
-                "id": id_div,
+                "id": "a_"+id_div+"",
                 "rel": i+"x"+j
             }).setStyles({
                 "position": "absolute",
