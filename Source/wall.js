@@ -458,10 +458,12 @@ var Wall = new Class({
         var x    = i * tile_w;
         var y    = j * tile_h;
         var e    = new Element("div").inject(this.wall);
+        var id_div=this.getIdFromCoordinates(i,j);
             e.setProperties({
                 "class": "tile",
                 "col": i,
                 "row": j,
+                "id": "a_"+id_div+"",
                 "rel": i+"x"+j
             }).setStyles({
                 "position": "absolute",
