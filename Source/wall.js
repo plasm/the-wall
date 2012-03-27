@@ -610,7 +610,7 @@ var Wall = new Class({
     getListLinksPoints: function( id_target ){
         var items = [];
         // Crea Hyperlink per ogni elemento del Wall
-        $each(this.coordinates, function(e,i){
+        Array.each(this.coordinates, function(e,i){
             var a = new Element("a.wall-item-coda[html="+(1+i)+"][href=#"+(1+i)+"]");
                 a.addEvent("click", function(evt){
                     // Disabilita slideshow
@@ -646,7 +646,7 @@ var Wall = new Class({
         // Attivazione
         if( this.coda_target ){
             // Rimuove link attivi
-            $each(this.coda_items, function(e,i){ e.removeClass("wall-item-current"); })
+            Array.each(this.coda_items, function(e,i){ e.removeClass("wall-item-current"); })
             // Attiva corrente
             this.coda_items[i].addClass("wall-item-current");
             return this.coda_items[i];
