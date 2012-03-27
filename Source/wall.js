@@ -95,8 +95,8 @@ var Wall = new Class({
         this.setOptions(options);
         this.__target   = id;
         // Imposta wall e Viewport
-        this.wall       = $(this.__target);
-        this.viewport   = $(this.__target).getParent();
+        this.wall       = document.id(this.__target);
+        this.viewport   = document.id(this.__target).getParent();
     },
     
     /**
@@ -142,9 +142,9 @@ var Wall = new Class({
         }
 
         // Definisce Handler
-        var handler = this.options.handle != undefined ? $(this.options.handle) : $(this.__target);
+        var handler = this.options.handle != undefined ? document.id(this.options.handle) : document.id(this.__target);
         // Click sul Wall
-        $(this.__target).addEvent("click", function(e){
+        document.id(this.__target).addEvent("click", function(e){
             e.stopPropagation();
             // Reset Movement
             this.moved = 0;
@@ -152,7 +152,7 @@ var Wall = new Class({
         
         // Definisce oggetto draggabile
         if( this.options.draggable == true ){
-            this.wallDrag = $(this.__target).makeDraggable({
+            this.wallDrag = document.id(this.__target).makeDraggable({
                 handle:handler,
                 limit: {
                             x: [this.minx, this.maxx],
@@ -621,7 +621,7 @@ var Wall = new Class({
                     this.moveTo(e.c, e.r);
                 }.bind( this ))
                 // Inserisce nel target
-                a.inject($(id_target));
+                a.inject(document.id(id_target));
                 // Aggiunge ad array elementi
                 items.push(a);
         }.bind( this ))
