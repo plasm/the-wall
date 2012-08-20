@@ -267,7 +267,7 @@ var Wall = new Class({
         if( this.options.slideshow == true ) this.initSlideshow();
        
         // Inizializza Device Mobile
-        if( this.options.detectMobile && this.detectMobile() ) this.initMobile();
+        if( this.options.detectMobile && this.detectMobile() && this.options.draggable == true ) this.initMobile();
 
         //
         return this;
@@ -407,6 +407,18 @@ var Wall = new Class({
         var vp_cols   = Math.ceil(vp_w / tile_w);
         var vp_rows   = Math.ceil(vp_h / tile_h);
 
+        // Ricalcola bounding
+        // Calcola Spostamento Min e Max per Assi X,Y
+        var bb = this.setBoundingBox();
+        // Imposta Coordiname BB
+        this.maxx = bb.maxx;
+        this.maxy = bb.maxy;
+        this.minx = bb.minx;
+        this.miny = bb.miny;
+        
+        // Aggiorna dim viewport
+        if(this.options.draggable == true) this.wallDrag.options.limit.x = [this.minx, this.maxx]
+
         // Posizioni
         var pos = {
             left: wall_coordinate.left - vp_coordinate.left,
@@ -514,8 +526,10 @@ var Wall = new Class({
      */
     initSlideshow: function(){
         // Controllo Speed
-        if( this.options.showDuration < this.options.speed ) this.options.showDuration = this.options.speed;
-        this.slideshowInterval = this.getAutomaticNext.periodical(this.options.showDuration, this );
+        if( this.options.slideshow == true ){
+          if( this.options.showDuration < this.options.speed ) this.options.showDuration = this.options.speed;
+          this.slideshowInterval = this.getAutomaticNext.periodical(this.options.showDuration, this );
+        }
     },
     
     /**
@@ -620,6 +634,9 @@ var Wall = new Class({
                     evt.stop();
                     this.moveTo(e.c, e.r);
                 }.bind( this ))
+                a.addEvent("touchend", function(evt){
+                  this.fireEvent("click", evt)
+                })
                 // Inserisce nel target
                 a.inject(document.id(id_target));
                 // Aggiunge ad array elementi
