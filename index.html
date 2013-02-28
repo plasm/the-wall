@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Wall by plasm</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>The Wall</h1>
+        <p>A Javascript plugin for Mootools</p>
+
+        <p class="view"><a href="https://github.com/plasm/the-wall">View the Project on GitHub <small>plasm/the-wall</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/plasm/the-wall/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/plasm/the-wall/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/plasm/the-wall">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="https://raw.github.com/plasm/the-wall/master/logotipo.png" alt="Screenshot"></p>
+
+<h1>The Wall - A Javascript plugin for Mootools</h1>
+
+<p>The Wall is a plugin for Mootools javascript framework designed to create walls of infinite dimensions. Its flexibility allows different applications, from infinite wall mode to Coda slider mode. The Wall creates compatible interfaces with the newer browsers and iPhone and iPad mobile devices.</p>
+
+<h1>Urls The Wall</h1>
+
+<p>The trailer: <a href="http://www.vimeo.com/plasm/the-wall" title="The Wall trailer">Trailer</a></p>
+
+<p>Project site: <a href="http://wall.plasm.it" title="The Wall">wall.plasm.it</a></p>
+
+<p>My portfolio: <a href="http://www.plasm.it" title="Plasm">www.plasm.it</a></p>
+
+<h2>How to use</h2>
+
+<p>Snippet code Javascript:</p>
+
+<pre><code>#JS
+
+// Define The Wall
+var maxLength = 100; // Max Number images or array length
+var counter   = 1;
+var wall = new Wall("wall", {
+                "width":150,
+                "height":150,
+                "rangex":[-100,100],
+                "rangey":[-100,100],
+                callOnUpdate: function(items){
+                    items.each(function(e, i){
+                        // This is example code
+                        var a = new Element("img[src=/your/folder/images/"+counter+".jpg]");
+                            a.inject(e.node).fade("hide").fade("in");
+                        counter++;
+                        // Reset counter
+                        if( counter &gt; maxLength ) counter = 1;
+                    })
+                }
+            });
+// Init Wall
+wall.initWall();
+</code></pre>
+
+<p>Snippet code HTML:</p>
+
+<pre><code>#HTML
+
+&lt;!-- Viewport and Wall --&gt;
+&lt;div id="viewport"&gt;
+    &lt;div id="wall"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END Viewport and Wall --&gt;
+</code></pre>
+
+<p>Snippet code CSS:</p>
+
+<pre><code>#CSS
+
+/* Minimal Css Required */
+#viewport{
+    width:900px;
+    height:450px;
+    position:relative;
+    overflow:hidden;
+    margin:0 auto;
+    background:#111111  ;
+}
+
+#wall{
+    z-index:1;
+}
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/plasm">plasm</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
