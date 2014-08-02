@@ -155,8 +155,8 @@ var Wall = new Class({
             this.wallDrag = document.id(this.__target).makeDraggable({
                 handle:handler,
                 limit: {
-                            x: [this.minx, this.maxx],
-                            y: [this.miny, this.maxy]
+                            x: [this.minx-this.options.width, this.maxx],
+                            y: [this.miny-this.options.height, this.maxy]
                         },
                 invert:this.options.invert,
                 onStart: function(el, e){
@@ -417,7 +417,8 @@ var Wall = new Class({
         this.miny = bb.miny;
         
         // Aggiorna dim viewport
-        if(this.options.draggable == true) this.wallDrag.options.limit.x = [this.minx, this.maxx]
+        if(this.options.draggable == true) this.wallDrag.options.limit.x = [this.minx - this.options.width, this.maxx]
+        if(this.options.draggable == true) this.wallDrag.options.limit.y = [this.miny - this.options.height, this.maxy]
 
         // Posizioni
         var pos = {
