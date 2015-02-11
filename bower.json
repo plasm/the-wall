@@ -1,0 +1,33 @@
+{
+    "name": "wall.js",
+    "description": "A Javascript plugin for Mootools",
+    "version": "1.0",
+    "author": {
+        "name": "Marco Dell'Anna"
+    },
+    "keywords": [
+        "javascript",
+        "wall",
+        "draggable",
+        "gallery"
+    ],
+    "main": [
+        "./Source/wall.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/plasm/the-wall"
+    },
+    "readme": "README.md",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "ignore": [
+        "README.md",
+        "logotipo.png",
+        "package.yml"
+    ]
+}
